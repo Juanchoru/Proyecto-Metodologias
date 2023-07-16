@@ -38,20 +38,5 @@ def convertir_a_csv(tabla): #Se agrega ; para separar las casillas y se visualic
 
 tabla_datos = []
 
-while True:
-    marca_tiempo = datetime.datetime.now()
 
-    humedad, temperatura, intensidad, tiempo_muestreo = simular_datos()
-
-    mostrar(humedad, temperatura, intensidad, tiempo_muestreo) #se cambia por la función modificada.
-
-    datos = [marca_tiempo, temperatura, humedad, intensidad]
-    almacenar_en_tabla(tabla_datos, datos)
-
-    sleep(tiempo_muestreo)
-
-    # Cada cierto tiempo, convertir la tabla en un archivo CSV
-    if len(tabla_datos) % 10 == 0:  # En este caso, cada 10 muestras, pero puedes ser modificado.
-        convertir_a_csv(tabla_datos)
-        break
     
